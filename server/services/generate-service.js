@@ -65,6 +65,7 @@ module.exports = ({ strapi }) => {
       throw new ApplicationError('Invalid locales! ' + invalidLocales);
     }
     const { id, locale: originalLocale, localizations = [], ...rest } = data;
+    console.log(data, 'DATA')
 
     const existingLocales = localizations.map((l) => l.locale);
     const createdIds = [id, ...localizations.map((l) => l.id)];
@@ -102,6 +103,8 @@ module.exports = ({ strapi }) => {
           ...rest,
         };
 
+        console.log(newData, 'NEW DATA UPDATE')
+
         const pickWritables = pickWritableAttributes({
           model: contentType.uid,
         });
@@ -128,6 +131,9 @@ module.exports = ({ strapi }) => {
           locale,
           localizations: createdIds,
         };
+
+        console.log(newData, 'NEW DATA UPDATE')
+
 
         const pickWritables = pickWritableAttributes({
           model: contentType.uid,
