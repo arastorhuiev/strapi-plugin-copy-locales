@@ -132,7 +132,7 @@ module.exports = ({ strapi }) => {
           localizations: createdIds,
         };
 
-        console.log(newData, 'NEW DATA UPDATE')
+        console.log(newData, 'NEW DATA CREATE')
 
 
         const pickWritables = pickWritableAttributes({
