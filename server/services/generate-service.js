@@ -126,7 +126,6 @@ module.exports = ({ strapi }) => {
         const newData = {
           ...rest,
           locale,
-          slug: rest.slug + rest.slug,
           localizations: createdIds,
         };
 
